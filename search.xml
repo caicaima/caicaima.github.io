@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[存在的意义]]></title>
+    <url>%2F2018%2F03%2F26%2F%E5%AD%98%E5%9C%A8%E7%9A%84%E6%84%8F%E4%B9%89%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[help]]></title>
+    <url>%2F2018%2F03%2F26%2Fhelp%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F03%2F15%2FJava%E9%9B%86%E5%90%88%E4%B9%8BList%2F</url>
+    <content type="text"><![CDATA[有序集合。允许有重复元素,通常允许有多个空值。 List接口提供了四种位置（索引）访问列表元素的方法。对于某些实现（例如，LinkedList类），这些操作的执行时间可能与索引值成比例。 List接口提供了一个特殊的迭代器 ListIterator,允许元素插入和替换。除了Iterator接口提供的正常操作以外，还提供双向访问。提供了一种方法来获取从列表中的指定位置开始的列表迭代器。 List接口提供了两种搜索指定对象的方法。从性能角度来看，应谨慎使用这些方法。在许多实现中，他们将执行昂贵的线性搜索。 List接口提供了两种方法来有效地插入和删除列表中任意点上的多个元素。 虽然List能把自己作为一个元素保存，但一定要小心，equals和hashCode方法在这样的List中不再很好的定义。 一些列表实现对它们可能包含的元素有限制,比如一些实现不允许有空值，一些实现对其元素类型有限制。 列表存储的元素最大值为Integer.MAX_VALUE，多于该值的，返回个数也是该值。 包含元素的条件为【o==null ? e==null : o.equals(e)】 列表的hashCode定义为 123int hashCode = 1; for(E e :list) hashCode = 31*hashCode + (e==null ? 0 : e.hashCode());]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F03%2F08%2F%E8%90%9D%E5%8D%9C%E4%B9%A6%E6%91%98%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%2F</url>
+    <content type="text"><![CDATA[推荐子系统:通过用户发表书摘内容，读过的书籍，用户第三方登录账号，手机号及通讯录，建立用户画像 广告子系统:包括数据流广告投放，广告展示及点击统计， UGC业务系统：]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker系列（一）]]></title>
+    <url>%2F2018%2F01%2F26%2FDocker%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[Docker社区版安装（CentOS 7 为例）OS要求为安装Docker，centos-extras 仓库要开启，默认是开启的，如果禁用了必须要先开启它。推荐使用overlay2存储驱动。 卸载旧版本老版本的Docker叫 docker或者 docker-engine ,如果已经安装的话，需要连同相关依赖都要卸载。 1234sudo yum remove docker \ docker-common \ docker-selinux \ docker-engine 使用仓库安装 Docker CE如果在新的机器上安装Docker,首先需要安装Docker仓库 安装仓库 安装相关包。yum-utils 提供 yum-config-manager工具包，device-mapper-persistent-data 和 lvm2 是devicemapper存储驱动所必需的。 123sudo yum install -y yum-utils \device-mapper-persistent-data \lvm2 安装稳定版仓库 123sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo 安装Docker CE 安装最新版本，在生产环境下，需要安装指定版本。 1sudo yum install docker-ce 如果启用多个Docker仓库的话，使用 yum install 或 yum update,而不指定版本，则默认会升级到最新的版本。 在生产环境下，需要安装指定版本而不是最新版本，可以使用命令 yum list docker-ce --showduplicates | sort -r 来查看仓库中的版本，使用命令 sudo yum install &lt;FULLY-QUALIFIED-PACKAGE-NAME&gt; 来指定安装哪个版本。 启动Docker。sudo systemctl start docker。 使用命令sudo docker run hello-world查看是否安装成功。 卸载 Docker 卸载 Docker CE. sudo yum remove docker-ce 删除所有的images,containers，volumes sudo rm -rf /var/lib/docker 非root用户管理Docker在非root用户使用docker命令时，如果你不想每次使用sudo命令，可以创建一个名为 docker的用户组，并且把用户添加到用户组中去。 sudo groupadd docker 创建 docker用户组 sudo usermod -aG docker $USER 把当前用户加入到用户组 退出并重新登录， 确认能否不用 sudo使用docker命令 配置Docker随系统自启动大多数当前的Linux发行版（RHEL，CentOS，Fedora，Ubuntu 16.04及更高版本）使用systemd来管理系统引导时启动的服务。 Ubuntu 14.10及以下版本使用upstart。 ####systemd1sudo systemctl enable docker 禁用的话使用 1sudo systemctl disable docker 如果您需要添加HTTP代理，为Docker运行时文件设置不同的目录或分区，或者进行其他自定义请参考 自定义systemd Docker 守护进程选项 ####upstart 当系统使用upstart时，Docker会自动配置随系统自启动，如果要禁用该功能则使用下面命令 1echo manual | sudo tee /etc/init/docker.override chkconfig1sudo chkconfig docker on 安装时的Q&amp;ATroubleshooting]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[搭建shadowsocks服务器]]></title>
     <url>%2F2017%2F11%2F26%2F%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
-    <content type="text"><![CDATA[搭建shadowsocks服务器 之前用过一段时间的付费VPN,从收费价格上来讲与租主机相差不了多少,于是决定自己搭建shadowsocks服务器. 准备 AWS首尔节点开一台EC2配置相关的安全设置 用ssh 客户端连接到主机 检查python环境等 python --version 开始 检查并升级系统软件包 sudo apt install --upgrade; 安装==pip== sudo apt install python-pip (已经安装过的可以忽略); 下载shadowsocks ,pip install git+https://github.com/shadowsocks/shadowsocks.git@master 或者 pip install shadowscoks,如果没有什么意外,==shadowsocks==就已经安装好了; 安装shadowsocks所需要的加密模块: apt install python-m2crypto; 新建并编辑shadowsocks启动时的配置文件ssconfig.json 12345678910&#123; "server":"server_ip", "server_port":8388, "local_address":"127.0.0.1", "local_port":1080, "password":"mypassword", "timeout":600, "method":"aes-256-cfb", "fast_open":false&#125; 配置说明 参数名 解释 server 服务器Ip地址,//在配置过程中发现配置了服务器的真实地址后,启动shadowsocks报错,未找到原因,可以配置为0.0.0.0 server_port 服务器监听端口 local_adress 本地IP地址(可选) local_port 本地端口号 password 登录时所用的密码 timeout 超时时间 method 加密算法 默认 aes-256-cfb fast_open 是否使用TCP_FASTOPEN,true/false workers number of workers, available on Unix/Linux 启动shadowsocks:1sudo nohup ./ssserver -c /opt/software/ssconfig.json &gt; /opt/software/log &amp; 或者 1ssserver -c /opt/software/ssconfig.json -d start &gt; /opt/software/log == 注意: == 服务器防火墙设置入站规则要开启8388端口 到此vpn就已经搭建完毕,可以开启畅游之旅了]]></content>
+    <content type="text"><![CDATA[搭建shadowsocks服务器 之前用过一段时间的付费VPN,从收费价格上来讲与租主机相差不了多少,于是决定自己搭建shadowsocks服务器. 准备 AWS首尔节点开一台EC2配置相关的安全设置 用ssh 客户端连接到主机 检查python环境等 python --version 开始 检查并升级系统软件包 sudo apt install --upgrade; sudo apt update更新源； 安装==pip== sudo apt install python-pip (已经安装过的可以忽略); 下载shadowsocks ,pip install git+https://github.com/shadowsocks/shadowsocks.git@master 或者 pip install shadowscoks,如果没有什么意外,==shadowsocks==就已经安装好了; 安装shadowsocks所需要的加密模块: apt install python-m2crypto; 新建并编辑shadowsocks启动时的配置文件ssconfig.json 12345678910&#123; "server":"server_ip", "server_port":8388, "local_address":"127.0.0.1", "local_port":1080, "password":"mypassword", "timeout":600, "method":"aes-256-cfb", "fast_open":false&#125; 配置说明 参数名 解释 server 服务器Ip地址,//在配置过程中发现配置了服务器的真实地址后,启动shadowsocks报错,未找到原因,可以配置为0.0.0.0 server_port 服务器监听端口 local_adress 本地IP地址(可选) local_port 本地端口号 password 登录时所用的密码 timeout 超时时间 method 加密算法 默认 aes-256-cfb fast_open 是否使用TCP_FASTOPEN,true/false workers number of workers, available on Unix/Linux 启动shadowsocks:1sudo nohup ./ssserver -c /opt/software/ssconfig.json &gt; /opt/software/log &amp; 或者 1ssserver -c /opt/software/ssconfig.json -d start --log-file /opt/software/log == 注意: == 服务器防火墙设置入站规则要开启8388端口 到此vpn就已经搭建完毕,可以开启畅游之旅了]]></content>
       <tags>
         <tag>shadowsocks</tag>
       </tags>
